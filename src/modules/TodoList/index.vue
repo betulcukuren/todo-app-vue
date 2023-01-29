@@ -32,9 +32,11 @@
         <li class="todo__item">
           <div class="todo__item--inner">
             <div class="todo__item--content">
-              <input type="checkbox" class="todo__item--checkbox" id="todo__item#1" />
-              <label for="todo__item#1"></label>
-              <span class="todo__item--text">Fast site speed</span>
+              <Checkbox id="todo__item#1" />
+              <div class="item__detail">
+                <div class="item__detail--text">Fast site speed</div>
+                <div class="item__detail--date">08.02.2023</div>
+              </div>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -47,9 +49,11 @@
         <li class="todo__item">
           <div class="todo__item--inner">
             <div class="todo__item--content">
-              <input type="checkbox" class="todo__item--checkbox" id="todo__item#2" />
-              <label for="todo__item#2"></label>
-              <span class="todo__item--text">SEO friendly URLs</span>
+              <Checkbox id="todo__item#2" />
+              <div class="item__detail">
+                <div class="item__detail--text">SEO friendly URLs</div>
+                <div class="item__detail--date">08.02.2023</div>
+              </div>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -62,9 +66,11 @@
         <li class="todo__item">
           <div class="todo__item--inner">
             <div class="todo__item--content">
-              <input type="checkbox" class="todo__item--checkbox" id="todo__item#3" />
-              <label for="todo__item#3"></label>
-              <span class="todo__item--text">Good internal links</span>
+              <Checkbox id="todo__item#3" />
+              <div class="item__detail">
+                <div class="item__detail--text">Good internal links</div>
+                <div class="item__detail--date">08.02.2023</div>
+              </div>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -77,9 +83,11 @@
         <li class="todo__item">
           <div class="todo__item--inner">
             <div class="todo__item--content">
-              <input type="checkbox" class="todo__item--checkbox" id="todo__item#4" />
-              <label for="todo__item#4"></label>
-              <span class="todo__item--text">Structured data</span>
+              <Checkbox id="todo__item#4" />
+              <div class="item__detail">
+                <div class="item__detail--text">Structured data</div>
+                <div class="item__detail--date">08.02.2023</div>
+              </div>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -92,9 +100,11 @@
         <li class="todo__item">
           <div class="todo__item--inner">
             <div class="todo__item--content">
-              <input type="checkbox" class="todo__item--checkbox" id="todo__item#5" />
-              <label for="todo__item#5"></label>
-              <span class="todo__item--text">Social media strategy</span>
+              <Checkbox id="todo__item#5" />
+              <div class="item__detail">
+                <div class="item__detail--text">Social media strategy</div>
+                <div class="item__detail--date">08.02.2023</div>
+              </div>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -117,9 +127,14 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
+import Checkbox from '../../components/Checkbox/index.vue'
+
 @Options({
   props: {
     title: String
+  },
+  components: {
+    Checkbox
   }
 })
 export default class TodoList extends Vue {
@@ -128,6 +143,6 @@ export default class TodoList extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
   @import "./index.scss";
 </style>

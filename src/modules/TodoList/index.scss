@@ -163,6 +163,7 @@ html, body {
     height: 65%;
     padding: 0;
     margin: 0;
+    margin-top: .8em;
     padding-bottom: 60px;
   }
 
@@ -175,7 +176,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    margin: .8em 0 .4em 0;
+    margin: 1em 0 .2em 0;
     height: 2.5em;
 
     &:hover {
@@ -187,12 +188,12 @@ html, body {
       color: $text-color !important;
     }
 
-    &:hover &--checkbox + label {
-      border: 2px solid $text-color;
+    &:hover .checkbox + label {
+      border: 2px solid $text-color !important;
     }
 
-    &:hover &--checkbox:checked + label:after {
-      background-color: $text-color;
+    &:hover .checkbox:checked + label:after {
+      background-color: $text-color !important;
     }
 
     &--inner {
@@ -209,41 +210,6 @@ html, body {
       display: flex;
       align-items: center;
 
-    }
-
-    &--detail {
-      display: flex;
-      align-items: center;
-    }
-
-    &--checkbox + label {
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-      border: 2px solid #bcbcbc;
-      border-radius: 2px;
-      cursor: pointer;
-      margin-right: 20px;
-    }
-
-    &--checkbox:checked + label:after {
-      content: "✓";
-      background-color: #C6C6C6;
-      color: #fff;
-      font-size: 25px;
-      width: 25px;
-      heighT: 25px;
-      position: relative;
-      display: block;
-      text-align: center;
-    }
-
-    &--checkbox {
-      display: none;
-    }
-
-    &--text {
-      width: 80%;
     }
 
     &--status {
@@ -344,11 +310,29 @@ html, body {
       background-position-x: 100%;
       background-position-y: 60%;
       background-size: 3.5em auto;
+
     }
   }
 }
 
+.item__detail {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  &--text {
+    width: 100%;
+    font-size: $font-md;
+  }
+  &--date {
+    width: 100%;
+    font-size: $font-xs;
+    color: #C6C6C6;
+  }
+}
+
+// Scroll
 ::-webkit-scrollbar {
   background: $text-color;
   border-radius: 10px;
 }
+

@@ -1,0 +1,25 @@
+.checkbox + label {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border: 2px solid #bcbcbc;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .checkbox:checked + label:after {
+    content: "✓";
+    background-color: #C6C6C6;
+    color: #fff;
+    font-size: 25px;
+    width: 25px;
+    heighT: 25px;
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+
+  .checkbox {
+    display: none;
+  }
