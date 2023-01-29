@@ -137,6 +137,7 @@ html, body {
     text-align: center;
     color: $text-color;
     padding-top: 10%;
+    padding-bottom: 2%;
     height: 10%;
   }
 
@@ -182,6 +183,18 @@ html, body {
       color: $text-color;
     }
 
+    &:hover .todo__item--status {
+      color: $text-color !important;
+    }
+
+    &:hover &--checkbox + label {
+      border: 2px solid $text-color;
+    }
+
+    &:hover &--checkbox:checked + label:after {
+      background-color: $text-color;
+    }
+
     &--inner {
       width: 80%;
       padding: .1em 0;
@@ -193,6 +206,9 @@ html, body {
 
     &--content {
       width: 100%;
+      display: flex;
+      align-items: center;
+
     }
 
     &--detail {
@@ -200,22 +216,34 @@ html, body {
       align-items: center;
     }
 
-    &--checkbox {
+    &--checkbox + label {
       width: 25px;
       height: 25px;
+      display: inline-block;
+      border: 2px solid #bcbcbc;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
 
-      &:checked {
-        background-color: #C6C6C6 !important;
-      }
+    &--checkbox:checked + label:after {
+      content: "✓";
+      background-color: #C6C6C6;
+      color: #fff;
+      font-size: 25px;
+      width: 25px;
+      heighT: 25px;
+      position: relative;
+      display: block;
+      text-align: center;
+    }
 
-      &:hover {
-        border: 3px solid $text-color !important;
-
-      }
+    &--checkbox {
+      display: none;
     }
 
     &--text {
-      margin-left: 20px;
+      width: 80%;
     }
 
     &--status {
@@ -225,7 +253,7 @@ html, body {
       appearance: none;
       background-color: transparent;
       border: none;
-      padding: 0 1em 0 0;
+      padding: 0;
       margin: 0;
       font-family: inherit;
       font-size: inherit;
@@ -241,7 +269,7 @@ html, body {
 
   &__separator {
     height: 0px;
-    width: 40vw;
+    width: 38vw;
     left: 0;
     right: 0;
     margin: auto;

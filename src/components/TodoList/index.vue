@@ -33,7 +33,8 @@
           <div class="todo__item--inner">
             <div class="todo__item--content">
               <input type="checkbox" class="todo__item--checkbox" id="todo__item#1" />
-              <label for="todo__item#1" class="todo__item--text">Fast site speed</label>
+              <label for="todo__item#1"></label>
+              <span class="todo__item--text">Fast site speed</span>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -47,7 +48,8 @@
           <div class="todo__item--inner">
             <div class="todo__item--content">
               <input type="checkbox" class="todo__item--checkbox" id="todo__item#2" />
-              <label for="todo__item#2" class="todo__item--text">SEO friendly URLs</label>
+              <label for="todo__item#2"></label>
+              <span class="todo__item--text">SEO friendly URLs</span>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -61,7 +63,8 @@
           <div class="todo__item--inner">
             <div class="todo__item--content">
               <input type="checkbox" class="todo__item--checkbox" id="todo__item#3" />
-              <label for="todo__item#3" class="todo__item--text">Good internal links</label>
+              <label for="todo__item#3"></label>
+              <span class="todo__item--text">Good internal links</span>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -75,7 +78,8 @@
           <div class="todo__item--inner">
             <div class="todo__item--content">
               <input type="checkbox" class="todo__item--checkbox" id="todo__item#4" />
-              <label for="todo__item#4" class="todo__item--text">Structured data</label>
+              <label for="todo__item#4"></label>
+              <span class="todo__item--text">Structured data</span>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
@@ -89,7 +93,8 @@
           <div class="todo__item--inner">
             <div class="todo__item--content">
               <input type="checkbox" class="todo__item--checkbox" id="todo__item#5" />
-              <label for="todo__item#5" class="todo__item--text">Social media strategy</label>
+              <label for="todo__item#5"></label>
+              <span class="todo__item--text">Social media strategy</span>
             </div>
             <select class="todo__item--status">
               <option>Low</option>
