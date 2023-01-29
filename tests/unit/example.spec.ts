@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import TodoList from '@/components/TodoList.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
+describe('TodoList.vue', () => {
+  it('renders props.title when passed', () => {
+    const title = 'SEO Checklist'
+    const wrapper = shallowMount(TodoList, {
+      props: { title }
     })
-    expect(wrapper.text()).toMatch(msg)
+    expect(wrapper.text()).toMatch(title)
   })
 })
