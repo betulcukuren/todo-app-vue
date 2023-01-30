@@ -43,24 +43,4 @@
     align-items: center;
 
   }
-
-  &--status {
-    width: 6em;
-    font-size: $font-sm;
-    text-align: right;
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: inherit;
-    line-height: inherit;
-    outline: none;
-
-    &::-ms-expand {
-      display: none;
-    }
-  }
 }

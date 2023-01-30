@@ -1,0 +1,49 @@
+.filter {
+  &__dd {
+    flex-basis: 8vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @media (max-width: 1919px) {
+      flex-basis: 12vw;
+    }
+
+    &--select {
+      width: 100%;
+      min-width: max-content;
+      padding: 12px 15px 12px 10px;
+      background: #F6F6F8;
+      border-radius: 5px;
+      border: none;
+      font-size: $font-xs;
+      line-height: 22px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%2345526C' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position-x: 100%;
+      background-position-y: 60%;
+      background-size: 3.5em auto;
+      &__inline {
+        width: 6em;
+        font-size: $font-sm;
+        text-align: right;
+        appearance: none;
+        background-color: transparent;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+        outline: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+      }
+    }
+  }
+}

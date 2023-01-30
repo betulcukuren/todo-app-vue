@@ -3,30 +3,9 @@
     <span class="todo__header">{{ title }}</span>
     <div class="todo__content">
       <div class="todo__filters">
-        <div class="filter__dd">
-          <select class="filter__dd--select">
-            <option class="filter__dd--select__item">All</option>
-            <option class="filter__dd--select__item">Done</option>
-            <option class="filter__dd--select__item">Not Done</option>
-          </select>
-        </div>
-        <div class="filter__dd">
-          <select class="filter__dd--select">
-            <option class="filter__dd--item">All</option>
-            <option class="filter__dd--item">Low</option>
-            <option class="filter__dd--item">Medium</option>
-            <option class="filter__dd--item">High</option>
-          </select>
-        </div>
-        <div class="filter__dd">
-          <select class="filter__dd--select">
-            <option class="filter__dd--item">All</option>
-            <option class="filter__dd--item">High to Low</option>
-            <option class="filter__dd--item">Low to High</option>
-            <option class="filter__dd--item">New to Old</option>
-            <option class="filter__dd--item">Old to New</option>
-          </select>
-        </div>
+        <CustomSelect :selectData=statusSelect />
+        <CustomSelect :selectData=prioritySelect />
+        <CustomSelect :selectData=sortSelect />
       </div>
       <ul class="todo__list">
         <li class="todo__item" v-for="item in items" :key=item.id>
@@ -52,33 +31,104 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
+import { ICustomSelect, ITodoItem } from '../../store/types'
 import TodoItem from '../TodoItem/index.vue'
+import CustomSelect from '../../components/CustomSelect/index.vue'
 import items from '../../data/todo-items.json'
-
-interface ITodoItem {
-  id: number
-  text: string
-  date: string
-  status: number
-  priority: string
-}
 
 @Options({
   props: {
     title: String
   },
   components: {
-    TodoItem
+    TodoItem,
+    CustomSelect
   },
   data () {
     return {
-      items: items
+      items: items,
+      statusSelect: {
+        all: true,
+        textStyled: false,
+        options: [
+          {
+            id: 0,
+            value: 'Done',
+            text: 'Done',
+            icon: ''
+          },
+          {
+            id: 1,
+            value: 'Not Done',
+            text: 'Not Done',
+            icon: ''
+          }
+        ]
+      },
+      prioritySelect: {
+        all: true,
+        textStyled: false,
+        options: [
+          {
+            id: 0,
+            value: 'Low',
+            text: 'Low',
+            icon: ''
+          },
+          {
+            id: 1,
+            value: 'Medium',
+            text: 'Medium',
+            icon: ''
+          },
+          {
+            id: 2,
+            value: 'High',
+            text: 'High',
+            icon: ''
+          }
+        ]
+      },
+      sortSelect: {
+        all: false,
+        textStyled: false,
+        options: [
+          {
+            id: 0,
+            value: 'High to Low',
+            text: 'High to Low',
+            icon: ''
+          },
+          {
+            id: 1,
+            value: 'Low to High',
+            text: 'Low to High',
+            icon: ''
+          },
+          {
+            id: 2,
+            value: 'New to Old',
+            text: 'New to Old',
+            icon: ''
+          },
+
+          {
+            id: 3,
+            value: 'Old to New',
+            text: 'Old to New',
+            icon: ''
+          }
+        ]
+      }
     }
   }
 })
 export default class TodoList extends Vue {
   title!: string
-  declare items: Array<ITodoItem>
+  items!: Array<ITodoItem>
+  statusSelect!: ICustomSelect
+  prioritySelect!: ICustomSelect
+  sortSelect!: ICustomSelect
 }
 </script>
 

@@ -7,17 +7,15 @@
           <div class="item__detail--date">{{ date }}</div>
         </div>
       </div>
-      <select class="todo__item--status">
-        <option>Low</option>
-        <option>Medium</option>
-        <option>High</option>
-      </select>
+      <CustomSelect :selectData=priorityInlineSelect />
     </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
+import { ICustomSelect } from '../../store/types'
 import Checkbox from '../../components/Checkbox/index.vue'
+import CustomSelect from '../../components/CustomSelect/index.vue'
 
 @Options({
   props: {
@@ -28,7 +26,36 @@ import Checkbox from '../../components/Checkbox/index.vue'
     priority: String
   },
   components: {
-    Checkbox
+    Checkbox,
+    CustomSelect
+  },
+  data () {
+    return {
+      priorityInlineSelect: {
+        all: false,
+        textStyled: true,
+        options: [
+          {
+            id: 0,
+            value: 'Low',
+            text: 'Low',
+            icon: ''
+          },
+          {
+            id: 1,
+            value: 'Medium',
+            text: 'Medium',
+            icon: ''
+          },
+          {
+            id: 2,
+            value: 'High',
+            text: 'High',
+            icon: ''
+          }
+        ]
+      }
+    }
   }
 })
 export default class TodoItem extends Vue {
@@ -37,6 +64,7 @@ export default class TodoItem extends Vue {
   date!: string
   status!: number
   priority!: string
+  priorityInlineSelect!: ICustomSelect
 }
 </script>
 

@@ -45,10 +45,16 @@
     width: 80%;
     padding: 1.5em 0 0 0;
     height: 5%;
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2em;
     left: 0;
     right: 0;
     margin: auto;
+
+    @media (max-width: 1919px) {
+      gap: .5em;
+    }
   }
 
   &__list {
@@ -105,39 +111,6 @@
       height: 22px;
       margin-left: -4px;
       background: #C6C6C6;
-    }
-  }
-}
-
-.filter {
-  &__dd {
-    flex-basis: 8vw;
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: 3em;
-
-    @media (max-width: 1919px) {
-      flex-basis: 12vw;
-      margin-right: 2em;
-    }
-
-    &--select {
-      width: 100%;
-      min-width: max-content;
-      padding: 12px 15px 12px 10px;
-      background: #F6F6F8;
-      border-radius: 5px;
-      border: none;
-      font-size: $font-xs;
-      line-height: 22px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg fill='%2345526C' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-      background-repeat: no-repeat;
-      background-position-x: 100%;
-      background-position-y: 60%;
-      background-size: 3.5em auto;
-
     }
   }
 }
