@@ -1,14 +1,14 @@
 <template>
-  <TodoList title="SEO Checklist"/>
+  <TodoApp title="SEO Checklist"/>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import TodoList from './modules/TodoList/index.vue'
+import TodoApp from './views/TodoApp/index.vue'
 
 @Options({
   components: {
-    TodoList
+    TodoApp
   }
 })
 export default class App extends Vue {}
