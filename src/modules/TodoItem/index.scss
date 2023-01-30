@@ -1,0 +1,66 @@
+.todo__item {
+  width: 100%;
+  list-style-type: none;
+  font-size: $font-md;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 1em 0 .2em 0;
+  height: 2.5em;
+
+  &:hover {
+    background-color: $highlighted-bg-color;
+    color: $text-color;
+  }
+
+  &:hover .todo__item--status {
+    color: $text-color !important;
+  }
+
+  &:hover .checkbox + label {
+    border: 2px solid $text-color !important;
+  }
+
+  &:hover .checkbox:checked + label:after {
+    background-color: $text-color !important;
+  }
+
+  &--inner {
+    width: 80%;
+    padding: .1em 0;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &--content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  &--status {
+    width: 6em;
+    font-size: $font-sm;
+    text-align: right;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}

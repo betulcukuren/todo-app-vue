@@ -29,91 +29,16 @@
         </div>
       </div>
       <ul class="todo__list">
-        <li class="todo__item">
-          <div class="todo__item--inner">
-            <div class="todo__item--content">
-              <Checkbox id="todo__item#1" />
-              <div class="item__detail">
-                <div class="item__detail--text">Fast site speed</div>
-                <div class="item__detail--date">08.02.2023</div>
-              </div>
-            </div>
-            <select class="todo__item--status">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-        </div>
+        <li class="todo__item" v-for="item in items" :key=item.id>
+          <TodoItem
+            :id=item.id
+            :text=item.text
+            :date=item.date
+            :status=item.status
+            :priority=item.priority
+          />
+          <div class="todo__separator"></div>
         </li>
-        <div class="todo__separator"></div>
-        <li class="todo__item">
-          <div class="todo__item--inner">
-            <div class="todo__item--content">
-              <Checkbox id="todo__item#2" />
-              <div class="item__detail">
-                <div class="item__detail--text">SEO friendly URLs</div>
-                <div class="item__detail--date">08.02.2023</div>
-              </div>
-            </div>
-            <select class="todo__item--status">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-          </div>
-        </li>
-        <div class="todo__separator"></div>
-        <li class="todo__item">
-          <div class="todo__item--inner">
-            <div class="todo__item--content">
-              <Checkbox id="todo__item#3" />
-              <div class="item__detail">
-                <div class="item__detail--text">Good internal links</div>
-                <div class="item__detail--date">08.02.2023</div>
-              </div>
-            </div>
-            <select class="todo__item--status">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-          </div>
-        </li>
-        <div class="todo__separator"></div>
-        <li class="todo__item">
-          <div class="todo__item--inner">
-            <div class="todo__item--content">
-              <Checkbox id="todo__item#4" />
-              <div class="item__detail">
-                <div class="item__detail--text">Structured data</div>
-                <div class="item__detail--date">08.02.2023</div>
-              </div>
-            </div>
-            <select class="todo__item--status">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-          </div>
-        </li>
-        <div class="todo__separator"></div>
-        <li class="todo__item">
-          <div class="todo__item--inner">
-            <div class="todo__item--content">
-              <Checkbox id="todo__item#5" />
-              <div class="item__detail">
-                <div class="item__detail--text">Social media strategy</div>
-                <div class="item__detail--date">08.02.2023</div>
-              </div>
-            </div>
-            <select class="todo__item--status">
-              <option>Low</option>
-              <option>Medium</option>
-              <option>High</option>
-            </select>
-          </div>
-        </li>
-        <div class="todo__separator"></div>
       </ul>
       <div class="todo__footer">
         <div class="todo__add">
@@ -127,18 +52,33 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import Checkbox from '../../components/Checkbox/index.vue'
+import TodoItem from '../TodoItem/index.vue'
+import items from '../../data/todo-items.json'
+
+interface ITodoItem {
+  id: number
+  text: string
+  date: string
+  status: number
+  priority: string
+}
 
 @Options({
   props: {
     title: String
   },
   components: {
-    Checkbox
+    TodoItem
+  },
+  data () {
+    return {
+      items: items
+    }
   }
 })
 export default class TodoList extends Vue {
   title!: string
+  declare items: Array<ITodoItem>
 }
 </script>
 

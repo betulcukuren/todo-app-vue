@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22a6c7de06a371fbd2_Sailec%20Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22e4614b829d700ac6_Sailec%20Black%20Italic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22d11ff91146be3125_Sailec%20Bold%20Italic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22c355fcc77ba4d101_Sailec%20Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b226ad7885f742edb12_Sailec%20Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b223552a38f92635cc5_Sailec%20Regular%20Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b2212cbc938576e0cca_Sailec%20Light%20Italic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22a324806f9c87396f_Sailec%20Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b22dc55218389c63f9c_Sailec%20Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b227af7a7dd6e003eff_Sailec%20Thin%20Italic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b2208da68dc214d2d5f_Sailec%20Medium%20Italic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Sailec';
+    src: url('https://uploads-ssl.webflow.com/622217130a9cad1a33ea9b0a/62273b2208da6884e54d2d60_Sailec%20Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  $bg-color: #FFFFFF;
+  $border-color: #C6C6C6;
+  $highlighted-bg-color: #F4F6FF;
+  $text-color: #4F61FF;
+  $shadow-color: rgba(21, 0, 150, 0.05);
+
+  $font-md: 24px;
+  $font-sm: 20px;
+  $font-xs: 16px;
+  $font-lg: 40px;
+
+  @media (max-width: 1919px) {
+    $font-md: 24px;
+    $font-sm: 20px;
+    $font-xs: 16px;
+    $font-lg: 40px;
+  }
+
+  html, body {
+    background-color: $bg-color;
+  }

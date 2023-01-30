@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "text": "Fast site speed",
+        "date": "08.10.2023",
+        "status": 0,
+        "priority": "Low"
+    },
+    {
+        "id": 2,
+        "text": "SEO friendly URLs",
+        "date": "08.10.2023",
+        "status": 0,
+        "priority": "Medium"
+    },
+    {
+        "id": 3,
+        "text": "Good internal links",
+        "date": "08.10.2023",
+        "status": 0,
+        "priority": "Medium"
+    },
+    {
+        "id": 4,
+        "text": "Structured data",
+        "date": "08.10.2023",
+        "status": 0,
+        "priority": "High"
+    },
+    {
+        "id": 5,
+        "text": "Social media strategy",
+        "date": "08.10.2023",
+        "status": 0,
+        "priority": "High"
+    }
+]
