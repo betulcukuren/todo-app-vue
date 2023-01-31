@@ -1,32 +1,37 @@
 [
     {
+      "slug": "fast-site-speed",
       "text": "Fast site speed",
-      "date": "08.10.2023",
-      "status": 1,
+      "createdDate": "08.10.2023",
+      "completeStatus": 1,
       "priority": 0
     },
     {
+      "slug": "seo-friendly-urls",
       "text": "SEO friendly URLs",
-      "date": "08.10.2023",
-      "status": 0,
+      "createdDate": "08.10.2023",
+      "completeStatus": 0,
       "priority": 1
     },
     {
+      "slug": "good-internal-links",
       "text": "Good internal links",
-      "date": "09.10.2023",
-      "status": 0,
+      "createdDate": "09.10.2023",
+      "completeStatus": 0,
       "priority": 1
     },
     {
+      "slug": "structured-data",
       "text": "Structured data",
-      "date": "08.10.2023",
-      "status": 0,
+      "createdDate": "08.10.2023",
+      "completeStatus": 0,
       "priority": 2
     },
     {
+      "slug": "social-media-strategy",
       "text": "Social media strategy",
-      "date": "08.10.2023",
-      "status": 0,
+      "createdDate": "08.10.2023",
+      "completeStatus": 0,
       "priority": 2
     }
   ]

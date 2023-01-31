@@ -1,5 +1,4 @@
 export interface IOptions {
-  id: number
   value: string
   text: string
   icon: string
@@ -11,8 +10,9 @@ export interface ICustomSelect {
 }
 
 export interface ITodoItem {
+  slug: string,
   text: string
-  date: string
-  status: number
+  createdDate: string
+  completeStatus: number
   priority: number
 }

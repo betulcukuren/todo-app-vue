@@ -1,11 +1,11 @@
 <template>
   <ul class="todo__list">
-    <li class="todo__item" v-for="(item, index) in items" :key=index>
+    <li class="todo__item" v-for="(item) in items" :key="item.slug">
       <TodoItem
-        :id=index
+        :slug=item.slug
         :text=item.text
-        :date=item.date
-        :status=item.status
+        :createdDate=item.createdDate
+        :completeStatus=item.completeStatus
         :priority=item.priority
       />
       <div class="todo__separator"></div>

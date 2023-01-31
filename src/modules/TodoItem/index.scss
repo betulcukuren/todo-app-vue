@@ -71,6 +71,7 @@
   &--text {
     width: 100%;
     font-size: $font-lg;
+    line-height: initial;
     @media (max-width: 1919px) {
       font-size: $font-md;
     }

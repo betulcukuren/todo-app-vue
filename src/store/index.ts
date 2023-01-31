@@ -22,7 +22,7 @@ export default createStore({
     filteredTodoItems: function (state) {
       return state.todoItems.filter((item) => {
         if (state.filters.status !== -1) {
-          return state.filters.status === item.status
+          return state.filters.status === item.completeStatus
         }
         return item
       }).filter((item) => {
@@ -39,9 +39,9 @@ export default createStore({
           }
         } else {
           if (state.sort.direction === 'asc') {
-            return new Date(a.date).getTime() - new Date(b.date).getTime()
+            return new Date(a.createdDate).getTime() - new Date(b.createdDate).getTime()
           } else {
-            return new Date(b.date).getTime() - new Date(a.date).getTime()
+            return new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
           }
         }
       })
@@ -62,11 +62,17 @@ export default createStore({
     }
   },
   actions: {
-    addTask (context, payload) {
-      alert(payload)
+    add (context) {
+      context.commit(UPDATE_ITEMS, [...context.state.todoItems, {
+        text: 'Untitled task',
+        slug: 'untitled-text-' + new Date().getTime(),
+        completeStatus: 0,
+        priority: 0,
+        createdDate: new Date().toLocaleDateString('tr')
+      }])
     },
     remove (context, payload) {
-      context.commit(UPDATE_ITEMS, context.state.todoItems.filter((item, index) => payload !== index))
+      context.commit(UPDATE_ITEMS, context.state.todoItems.filter((item) => payload !== item.slug))
     },
     filter (context, payload) {
       const newFilters = {
@@ -83,9 +89,8 @@ export default createStore({
       context.commit(UPDATE_SORT, newSort)
     },
     update (context, payload) {
-      console.log(payload)
       const newItems = context.state.todoItems.map((item) => {
-        if (item.text === payload.text) {
+        if (item.slug === payload.slug) {
           return {
             ...item,
             ...payload.props

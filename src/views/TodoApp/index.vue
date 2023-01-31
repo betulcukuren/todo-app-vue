@@ -5,7 +5,7 @@
       <Filter />
       <TodoList :items=$store.getters.filteredTodoItems />
       <div class="todo__footer">
-        <button class="todo__add" @click="$store.dispatch('addTask', title)">
+        <button class="todo__add" @click="$store.dispatch('add')">
           <div class="todo__add--horizontal"></div>
           <div class="todo__add--vertical"></div>
         </button>
