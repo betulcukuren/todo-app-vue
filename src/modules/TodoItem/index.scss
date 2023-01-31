@@ -42,6 +42,10 @@
     color: $text-color;
   }
 
+  &:hover .filter__dd {
+    width: 18%;
+  }
+
   &:hover .filter__dd--select {
     color: $text-color !important;
   }
@@ -59,8 +63,26 @@
     align-items: center;
   }
 
-  &:hover .item__detail > *{
+  &:hover .item__detail > * {
     color: $text-color;
+  }
+
+  &:hover .filter__dd--selected__styled {
+    color: $text-color;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%234F61FF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% + 25px);
+    background-position-y: 50%;
+    background-size: 3em auto;
+    padding-right: 30px;
+
+    @media (max-width: 1919px) {
+      background-position-x: calc(100% + 20px);
+      padding-right: 25px;
+    }
+    & > img {
+      display: none;
+    }
   }
 }
 

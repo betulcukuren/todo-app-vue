@@ -48,6 +48,9 @@ export default createStore({
     },
     getFilters: function (state) {
       return state.filters
+    },
+    getSort: function (state) {
+      return `${state.sort.criteria}-${state.sort.direction}`
     }
   },
   mutations: {

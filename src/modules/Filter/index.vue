@@ -13,6 +13,7 @@
     <CustomSelect
       :selectData=sortSelect
       :onChange="onChange('sort')"
+      :selected="$store.getters.getSort"
     />
   </div>
 </template>
@@ -22,6 +23,7 @@ import { useStore } from 'vuex'
 import { Options, Vue } from 'vue-class-component'
 import { ICustomSelect } from '../../store/types'
 import CustomSelect from '../../components/CustomSelect/index.vue'
+import * as Icons from '../../assets/svg'
 
 @Options({
   props: {
@@ -58,22 +60,22 @@ import CustomSelect from '../../components/CustomSelect/index.vue'
           {
             value: 0,
             text: 'Low',
-            icon: ''
+            icon: Icons.lowSVG
           },
           {
             value: 1,
             text: 'Medium',
-            icon: ''
+            icon: Icons.mediumSVG
           },
           {
             value: 2,
             text: 'High',
-            icon: ''
+            icon: Icons.highSVG
           },
           {
             value: -1,
             text: 'All',
-            icon: ''
+            icon: Icons.allSVG
           }
         ]
       },
