@@ -1,7 +1,10 @@
 .todo__item {
   width: 100%;
   list-style-type: none;
-  font-size: $font-md;
+  font-size: $font-lg;
+  @media (max-width: 1919px) {
+    font-size: $font-md;
+  }
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -10,23 +13,6 @@
   padding: 0;
   margin: 1em 0 .2em 0;
   height: 2.5em;
-
-  &:hover {
-    background-color: $highlighted-bg-color;
-    color: $text-color;
-  }
-
-  &:hover .todo__item--status {
-    color: $text-color !important;
-  }
-
-  &:hover .checkbox + label {
-    border: 2px solid $text-color !important;
-  }
-
-  &:hover .checkbox:checked + label:after {
-    background-color: $text-color !important;
-  }
 
   &--inner {
     width: 80%;
@@ -42,5 +28,56 @@
     display: flex;
     align-items: center;
 
+  }
+
+  &--delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover {
+    background-color: $highlighted-bg-color;
+    color: $text-color;
+  }
+
+  &:hover .filter__dd--select {
+    color: $text-color !important;
+  }
+
+  &:hover .checkbox + label {
+    border: 2px solid $text-color !important;
+  }
+
+  &:hover .checkbox:checked + label:after {
+    background-color: $text-color !important;
+  }
+
+  &:hover .todo__item--delete {
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover .item__detail > *{
+    color: $text-color;
+  }
+}
+
+.item__detail {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  &--text {
+    width: 100%;
+    font-size: $font-lg;
+    @media (max-width: 1919px) {
+      font-size: $font-md;
+    }
+  }
+  &--date {
+    width: 100%;
+    font-size: $font-xxs;
+    color: #C6C6C6;
   }
 }

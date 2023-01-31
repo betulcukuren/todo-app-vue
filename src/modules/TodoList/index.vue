@@ -1,8 +1,8 @@
 <template>
   <ul class="todo__list">
-    <li class="todo__item" v-for="item in items" :key=item.id>
+    <li class="todo__item" v-for="(item, index) in items" :key=index>
       <TodoItem
-        :id=item.id
+        :id=index
         :text=item.text
         :date=item.date
         :status=item.status

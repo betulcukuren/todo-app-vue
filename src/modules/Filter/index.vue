@@ -1,12 +1,24 @@
 <template>
   <div class="todo__filters">
-    <CustomSelect :selectData=statusSelect />
-    <CustomSelect :selectData=prioritySelect />
-    <CustomSelect :selectData=sortSelect />
+    <CustomSelect
+      :selected="$store.getters.getFilters.status"
+      :selectData="statusSelect"
+      :onChange="onChange('filter', 'status')"
+    />
+    <CustomSelect
+      :selected="$store.getters.getFilters.priority"
+      :selectData="prioritySelect"
+      :onChange="onChange('filter', 'priority')"
+    />
+    <CustomSelect
+      :selectData=sortSelect
+      :onChange="onChange('sort')"
+    />
   </div>
 </template>
 
 <script lang="ts">
+import { useStore } from 'vuex'
 import { Options, Vue } from 'vue-class-component'
 import { ICustomSelect } from '../../store/types'
 import CustomSelect from '../../components/CustomSelect/index.vue'
@@ -21,73 +33,71 @@ import CustomSelect from '../../components/CustomSelect/index.vue'
   data () {
     return {
       statusSelect: {
-        all: true,
         textStyled: false,
         options: [
           {
-            id: 0,
-            value: 'Done',
+            value: 1,
             text: 'Done',
             icon: ''
           },
           {
-            id: 1,
-            value: 'Not Done',
+            value: 0,
             text: 'Not Done',
+            icon: ''
+          },
+          {
+            value: -1,
+            text: 'All',
             icon: ''
           }
         ]
       },
       prioritySelect: {
-        all: true,
         textStyled: false,
         options: [
           {
-            id: 0,
-            value: 'Low',
+            value: 0,
             text: 'Low',
             icon: ''
           },
           {
-            id: 1,
-            value: 'Medium',
+            value: 1,
             text: 'Medium',
             icon: ''
           },
           {
-            id: 2,
-            value: 'High',
+            value: 2,
             text: 'High',
+            icon: ''
+          },
+          {
+            value: -1,
+            text: 'All',
             icon: ''
           }
         ]
       },
       sortSelect: {
-        all: false,
         textStyled: false,
         options: [
           {
-            id: 0,
-            value: 'High to Low',
+            value: 'priority-desc',
             text: 'High to Low',
             icon: ''
           },
           {
-            id: 1,
-            value: 'Low to High',
+            value: 'priority-asc',
             text: 'Low to High',
             icon: ''
           },
           {
-            id: 2,
-            value: 'New to Old',
+            value: 'date-desc',
             text: 'New to Old',
             icon: ''
           },
 
           {
-            id: 3,
-            value: 'Old to New',
+            value: 'date-asc',
             text: 'Old to New',
             icon: ''
           }
@@ -100,6 +110,16 @@ export default class TodoList extends Vue {
   statusSelect!: ICustomSelect
   prioritySelect!: ICustomSelect
   sortSelect!: ICustomSelect
+  store = useStore();
+
+  onChange (type: string, status?: string) {
+    return (value: string) => {
+      this.store.dispatch(type, {
+        value,
+        ...status ? { type: status } : {}
+      })
+    }
+  }
 }
 </script>
 

@@ -1,37 +1,32 @@
 [
     {
-        "id": 1,
-        "text": "Fast site speed",
-        "date": "08.10.2023",
-        "status": 0,
-        "priority": "Low"
+      "text": "Fast site speed",
+      "date": "08.10.2023",
+      "status": 1,
+      "priority": 0
     },
     {
-        "id": 2,
-        "text": "SEO friendly URLs",
-        "date": "08.10.2023",
-        "status": 0,
-        "priority": "Medium"
+      "text": "SEO friendly URLs",
+      "date": "08.10.2023",
+      "status": 0,
+      "priority": 1
     },
     {
-        "id": 3,
-        "text": "Good internal links",
-        "date": "08.10.2023",
-        "status": 0,
-        "priority": "Medium"
+      "text": "Good internal links",
+      "date": "09.10.2023",
+      "status": 0,
+      "priority": 1
     },
     {
-        "id": 4,
-        "text": "Structured data",
-        "date": "08.10.2023",
-        "status": 0,
-        "priority": "High"
+      "text": "Structured data",
+      "date": "08.10.2023",
+      "status": 0,
+      "priority": 2
     },
     {
-        "id": 5,
-        "text": "Social media strategy",
-        "date": "08.10.2023",
-        "status": 0,
-        "priority": "High"
+      "text": "Social media strategy",
+      "date": "08.10.2023",
+      "status": 0,
+      "priority": 2
     }
-]
+  ]

@@ -89,17 +89,12 @@
   $text-color: #4F61FF;
   $shadow-color: rgba(21, 0, 150, 0.05);
 
-  $font-md: 24px;
-  $font-sm: 20px;
+  $font-xl: 40px;
+  $font-lg: 24px;
+  $font-md: 20px;
+  $font-sm: 18px;
   $font-xs: 16px;
-  $font-lg: 40px;
-
-  @media (max-width: 1919px) {
-    $font-md: 24px;
-    $font-sm: 20px;
-    $font-xs: 16px;
-    $font-lg: 40px;
-  }
+  $font-xxs: 14px;
 
   html, body {
     background-color: $bg-color;
