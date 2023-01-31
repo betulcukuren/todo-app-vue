@@ -1,7 +1,7 @@
 <template>
     <div class="todo__item--inner">
       <div class="todo__item--content">
-        <Checkbox :id="'todo__item#' + slug" :checked="completeStatus" :onChange="onChange('status', slug)"/>
+        <Checkbox :id="'todo__item#' + slug" :checked="completeStatus" :onChange="onChange('completeStatus', slug)"/>
         <div class="item__detail">
           <div class="item__detail--text" contenteditable="true" @blur="onTextBlur(slug, $event)">{{ text }}</div>
           <div class="item__detail--date">{{ createdDate }}</div>
@@ -74,7 +74,7 @@ export default class TodoItem extends Vue {
   onChange (type: string, slug: string) {
     return (value: string) => {
       let prop = parseInt(value, 10)
-      if (type === 'status') {
+      if (type === 'completeStatus') {
         prop = value === 'true' ? 1 : 0
       }
 
